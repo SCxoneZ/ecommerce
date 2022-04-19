@@ -2,8 +2,10 @@ import styled from 'styled-components';
 import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
+import data from '../data/product.json';
+import styles from '../styles/Home.module.css'
 import { Nav } from '../components/Nav.js';
-import { ProductCard } from '../components/ProductCard.js';
+import { ProductCard, Card } from '../components/ProductCard.js';
 
 
 export default function Home(){
@@ -13,20 +15,26 @@ export default function Home(){
   
   <Head>
     <title>Instagram 2.0</title>
-    <link rel="stylesheet" src="../styles/globals.css"/>
   </Head>
-  <img style={{
-    position: 'absolute',
-    right: '0',
-    top: '300px',
-  }} className="particle" alt="gatau" src="/hero-full.png" width="400" height="400"/>
+  <div className={styles.particle}>
+    <Image className={styles.particle} alt="gatau" src="/hero-full.png" width="600" height="600"/>
+  </div>
   <Nav>
     <p>Tokepekita</p>
   </Nav>
   
-  <ProductCard/>
+  <ProductCard dataProduct={data}/>
   
   </>
   
   );
 }
+
+
+/*export function getStaticProps(){
+  return {
+    props: {
+      productData: data
+    }
+  };
+}*/

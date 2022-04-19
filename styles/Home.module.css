@@ -114,3 +114,10 @@
     flex-direction: column;
   }
 }
+
+.particle{
+  position: fixed;
+  right: 0;
+  right: -150px;
+  top: 200px;
+}

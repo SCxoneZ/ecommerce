@@ -11,4 +11,5 @@ export const Nav = styled.div`
   font-size: 25px;
   top: 0;
   border-bottom: 1px solid black;
+  margin-bottom: 50px;
 `;

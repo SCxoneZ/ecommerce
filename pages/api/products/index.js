@@ -1,5 +1,5 @@
-import axios from "axios";
 import data from '../../../data/product.json';
+
 
 export default async function handler(req, res) {
 
@@ -11,11 +11,14 @@ export default async function handler(req, res) {
     });
   }
 
+  if (req.query.limit <= data.length) {
+    res.status(200).json({
+      code: 200,
+      status: "OK",
+      result: data.slice(0, parseInt(req.query.limit))
+    });
+  }
 
-  res.status(200).json({
-    code: 200,
-    status: "OK",
-    result: data
-  });
+
 
 }
