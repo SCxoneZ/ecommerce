@@ -26,7 +26,7 @@ export function Nav(){
   
   <NavWrapper>
     <Link href="/" passHref>
-      <Title>Tokopedia</Title>
+      <Title>Shopee</Title>
     </Link>
   </NavWrapper>
   
