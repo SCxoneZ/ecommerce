@@ -8,50 +8,66 @@ import axios from "axios";
 import { Nav } from '../components/Nav.js';
 import { ProductCard, Card } from '../components/ProductCard.js';
 import { useState } from 'react';
-import getProduct from '../lib/getProduct.js';
+import products from '../data/product.json';
+import Button from '@mui/material/Button';
 
-export default function Home({products}){
+const ShowMore = styled.button`
+  display: block;
+  margin: 20px auto;
+  border: none;
+  autline: none;
+  width: 150px;
+  height: 40px;
+  background-color: #2e85ff;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0px 0px 26px 0px rgba(0,0,0,0.37);
+  transition: .3s;
+  position: relative;
+  z-index: 1;
+  
+  &:hover{
+    border-radius: 20px;
+  }
+`;
+
+export default function Home(){
+const maxData = data.length;
 const [ limit, setLimit ] = useState(5);
+let limitedProducts = [];
 
-console.log("ini products", products);
-/*fetch(`http://localhost:3000/api/products?limit=5`)
-.then(res => res.json())
-.then(data => {
-  console.log(data);
-})*/
-//console.log(products);
-//console.log(products.then(res => res));
-/*products.then(data => {
-  console.log(data);
-});*/
+// limiting data
+for(let i = 0; i < limit; i++){
+  limitedProducts.push(data[i]);
+}
 
-  return (
+return (
   
   <>
   
   <Head>
-    <title>Instagram 2.0</title>
+    <title>Tokopedia Abal Abal</title>
+    <script src="//cdn.jsdelivr.net/npm/eruda"></script>
+    <script>eruda.init();</script>
   </Head>
   <div className={styles.particle}>
     <Image alt="gatau" src="/hero-full.png" width="600" height="600"/>
   </div>
-  <Nav>
-    <p>Tokepekita</p>
-  </Nav>
+  <Nav/>
   
-  <ProductCard dataProduct={products}/>
+  <ProductCard dataProduct={limitedProducts}/>
+  <ShowMore onClick={(e) => {
+    if(limit < maxData){
+      setLimit(limit+5);
+    }else{
+      e.target.innerHTML = 'Product Sudah Habis';
+      e.target.style.backgroundColor = 'red';
+    }
+  }}>Show More</ShowMore>
   
   </>
   
   );
 }
 
-async function getStaticProps(){
-  const response = await axios.get(`/api/products`);
-  
-  return {
-    props: {
-      products: response.result
-    }
-  };
-}
