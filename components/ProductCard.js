@@ -26,15 +26,16 @@ export const Card = styled.div`
 
 export function ProductCard({dataProduct}){
   
+  console.log(typeof dataProduct);
   
   return (
   
   <CardsWrapper>
-    {dataProduct.map(product => {
+    {/*dataProduct.map(product => {
       return (
         <Card>{product.title}</Card>
       );
-    })}
+    })*/console.log(dataProduct)}
   </CardsWrapper>
   
   );
