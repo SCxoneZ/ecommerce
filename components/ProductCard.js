@@ -93,7 +93,7 @@ export function ProductCard({dataProduct}){
       <Link href="test" key={product.id} passhref>
         <Card>
           <ThumbnailWrapper>
-            <Image src={product.image} width="150" height="180"/>
+            <Image src={product.image} width="150" height="180" alt={product.title}/>
           </ThumbnailWrapper>
           <DetailsWrapper>
           

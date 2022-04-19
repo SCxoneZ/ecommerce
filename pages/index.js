@@ -48,8 +48,6 @@ return (
   
   <Head>
     <title>Tokopedia Abal Abal</title>
-    <script src="//cdn.jsdelivr.net/npm/eruda"></script>
-    <script>eruda.init();</script>
   </Head>
   <div className={styles.particle}>
     <Image alt="gatau" src="/hero-full.png" width="600" height="600"/>

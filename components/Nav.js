@@ -25,7 +25,7 @@ export function Nav(){
   return (
   
   <NavWrapper>
-    <Link href="/" passhref>
+    <Link href="/" passHref>
       <Title>Tokopedia</Title>
     </Link>
   </NavWrapper>
