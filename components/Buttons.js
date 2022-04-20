@@ -19,3 +19,25 @@ export const ShowMore = styled.button`
     border-radius: 20px;
   }
 `;
+
+export const BuyButton = styled.button`
+
+  display: block;
+  margin: 20px auto;
+  border: none;
+  autline: none;
+  width: 250px;
+  height: 40px;
+  background-color: #5c7ef3;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0px 0px 26px 0px rgba(0,0,0,0.37);
+  transition: .3s;
+  position: relative;
+  
+  &:hover{
+    border-radius: 20px;
+  }
+
+`;

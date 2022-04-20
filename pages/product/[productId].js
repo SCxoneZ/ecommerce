@@ -1,14 +1,12 @@
 import { useRouter } from 'next/router';
 import axios from 'axios';
 import absoluteUrl from 'next-absolute-url'
-
+import { DetailProduct } from '../../components/DetailProduct';
 
 export default function DefailProduct({data}){
   return (
     <>
-    <ul>
-      <li>Title: {data.title}</li>
-    </ul>
+      <DetailProduct product={data}/>
     </>
   );
 }
