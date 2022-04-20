@@ -27,7 +27,7 @@ return (
   <>
   
   <Head>
-    <title>Tokopedia Abal Abal</title>
+    <title>Toko</title>
   </Head>
   
   <ProductCard dataProduct={limitedProducts}/>
