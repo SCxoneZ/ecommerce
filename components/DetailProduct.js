@@ -115,7 +115,7 @@ export function DetailProduct( {
       </CategoryText>
       
       <RatingWrapper>
-        <Rating name="read-only" value={Math.round(product.rating.rate)} readOnly/>
+        <Rating name="read-only" value={Math.floor(product.rating.rate)} readOnly/>
       </RatingWrapper>
       
       <ProductName>
