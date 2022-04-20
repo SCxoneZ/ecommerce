@@ -3,7 +3,8 @@ import Link from 'next/link';
 import Head from 'next/head';
 import Rating from '@mui/material/Rating';
 import Typography from '@mui/material/Typography';
-import {BuyButton} from './Buttons.js'
+import { useRouter } from 'next/router';
+import {BuyButton, BackButton} from './Buttons.js'
 
 const ThumbnailWrapper = styled.div`
 @media (max-width: 992px) {
@@ -12,12 +13,14 @@ width: 50%;
 margin: 0 auto;
 position: relative;
 z-index: 999;
-border-radius: 20px
+border-radius: 10px
+box-shadow: 0 0 8px rgba(0,0,0,.3);
 `;
 
 const Image = styled.img`
 width: 100%;
-border-radius: 20px
+border-radius: 10px;
+box-shadow: 0 0 8px rgba(0,0,0,.15);
 `;
 
 const DetailWrapper = styled.div`
@@ -91,6 +94,8 @@ const Price = styled.div`
 export function DetailProduct( {
   product
 }) {
+  const router = useRouter();
+  
   return (
 
     <>
@@ -125,6 +130,10 @@ export function DetailProduct( {
         {product.price}
       </Price>
       
+      <BackButton onClick={() => {
+        // redirect to root
+        router.push("/");
+      }}>Back</BackButton>
       <BuyButton>
         BUY!
       </BuyButton>

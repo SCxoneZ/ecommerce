@@ -13,6 +13,7 @@ export const NavWrapper = styled.div`
   top: 0;
   border-bottom: 1px solid black;
   margin-bottom: 50px;
+  text-align: center;
 `;
 
 const Title = styled.p`
@@ -26,7 +27,7 @@ export function Nav(){
   
   <NavWrapper>
     <Link href="/" passHref>
-      <Title>Xonestore</Title>
+      <Title>Xone Store</Title>
     </Link>
   </NavWrapper>
   

@@ -14,7 +14,11 @@ import absoluteUrl from 'next-absolute-url'
 
 export default function Home({ data }){
 const maxData = data.length;
-const [ limit, setLimit ] = useState(5);
+const everyIterable = 8;
+const [ limit, setLimit ] = useState(everyIterable);
+const [ iterable, setIterable ] = useState(1);
+console.log(limit);
+console.log(iterable);
 let limitedProducts = [];
 
 // limiting data
@@ -27,16 +31,19 @@ return (
   <>
   
   <Head>
-    <title>Toko</title>
+    <title>Toko Abal Abal</title>
   </Head>
   
   <ProductCard dataProduct={limitedProducts}/>
   <ShowMore onClick={(e) => {
-    if(limit < maxData){
-      setLimit(limit+5);
-    }else{
+    if(limit < maxData && (maxData-limit) > everyIterable ){
+      setLimit(limit+everyIterable);
+      setIterable(iterable+1);
+    }else if(limit == maxData){
       e.target.innerHTML = 'Product Sudah Habis';
       e.target.style.backgroundColor = 'red';
+    }else{
+      setLimit(limit + (maxData-limit));
     }
   }}>Show More</ShowMore>
   
