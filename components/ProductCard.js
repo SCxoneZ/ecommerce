@@ -23,6 +23,7 @@ export const Card = styled.div`
   border-radius: 10px;
   margin: 20px auto;
   box-sizing: border-box;
+  overflow: hidden;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
   
@@ -54,8 +55,8 @@ export const ThumbnailWrapper = styled.div`
   justify-content: center;
   align-items: center;
   background: white;
-  border: 1.5px solid black;
-  border-radius: 5px 5px 2.5px 2.5px;
+  border-bottom: 1.5px solid black;
+  /*border-radius: 5px 5px 2.5px 2.5px;*/
 `;
 
 export const DetailsWrapper = styled.div`
@@ -90,7 +91,7 @@ export function ProductCard({dataProduct}){
   <CardsWrapper>
     {dataProduct.map(product => {
       return (
-      <Link href="test" key={product.id} passhref>
+      <Link href={`product/${product.id}`} key={product.id} passhref>
         <Card>
           <ThumbnailWrapper>
             <Image src={product.image} width="150" height="180" alt={product.title}/>

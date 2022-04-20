@@ -2,37 +2,17 @@ import styled from 'styled-components';
 import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
-import data from '../data/product.json';
+//import data from '../data/product.json';
 import styles from '../styles/Home.module.css'
 import axios from "axios";
-import { Nav } from '../components/Nav.js';
 import { ProductCard, Card } from '../components/ProductCard.js';
 import { useState } from 'react';
 import products from '../data/product.json';
-import Button from '@mui/material/Button';
+import { ShowMore } from '../components/Buttons.js';
+import absoluteUrl from 'next-absolute-url'
 
-const ShowMore = styled.button`
-  display: block;
-  margin: 20px auto;
-  border: none;
-  autline: none;
-  width: 150px;
-  height: 40px;
-  background-color: #2e85ff;
-  border-radius: 5px;
-  color: white;
-  font-weight: bold;
-  box-shadow: 0px 0px 26px 0px rgba(0,0,0,0.37);
-  transition: .3s;
-  position: relative;
-  z-index: 1;
-  
-  &:hover{
-    border-radius: 20px;
-  }
-`;
 
-export default function Home(){
+export default function Home({ data }){
 const maxData = data.length;
 const [ limit, setLimit ] = useState(5);
 let limitedProducts = [];
@@ -49,10 +29,6 @@ return (
   <Head>
     <title>Tokopedia Abal Abal</title>
   </Head>
-  <div className={styles.particle}>
-    <Image alt="gatau" src="/hero-full.png" width="600" height="600"/>
-  </div>
-  <Nav/>
   
   <ProductCard dataProduct={limitedProducts}/>
   <ShowMore onClick={(e) => {
@@ -69,3 +45,13 @@ return (
   );
 }
 
+export async function getServerSideProps(context){
+  const { origin } = absoluteUrl(context.req);
+  const result = await axios.get(`${origin}/api/products/`);
+  const data = result.data.result;
+  return {
+    props: {
+      data
+    }
+  };
+}
