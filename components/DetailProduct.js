@@ -5,6 +5,7 @@ import Rating from '@mui/material/Rating';
 import Typography from '@mui/material/Typography';
 import { useRouter } from 'next/router';
 import {BuyButton, BackButton} from './Buttons.js'
+import { DefaultFooter } from './Footer.js'
 
 const ThumbnailWrapper = styled.div`
 @media (max-width: 992px) {
@@ -139,6 +140,7 @@ export function DetailProduct( {
       </BuyButton>
       
     </DetailWrapper>
+    <DefaultFooter/>
     </>
     
   );

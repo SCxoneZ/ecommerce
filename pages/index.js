@@ -10,7 +10,7 @@ import { useState } from 'react';
 import products from '../data/product.json';
 import { ShowMore } from '../components/Buttons.js';
 import absoluteUrl from 'next-absolute-url'
-
+import { FixedFooter } from '../components/Footer.js';
 
 export default function Home({ data }){
 const maxData = data.length;
@@ -45,6 +45,7 @@ return (
     }
   }}>Show More</ShowMore>
   
+  <FixedFooter/>
   </>
   
   );

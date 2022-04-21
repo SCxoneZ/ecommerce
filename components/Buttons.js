@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const ShowMore = styled.button`
   display: block;
   margin: 20px auto;
+  margin-bottom: 120px;
   border: none;
   autline: none;
   width: 150px;
