@@ -17,8 +17,6 @@ const maxData = data.length;
 const everyIterable = 8;
 const [ limit, setLimit ] = useState(everyIterable);
 const [ iterable, setIterable ] = useState(1);
-console.log(limit);
-console.log(iterable);
 let limitedProducts = [];
 
 // limiting data
@@ -52,9 +50,8 @@ return (
   );
 }
 
-export async function getServerSideProps(context){
-  const { origin } = absoluteUrl(context.req);
-  const result = await axios.get(`${origin}/api/products/`);
+export async function getStaticProps(context){
+  const result = await axios.get(`http://localhost:3000/api/products/`);
   const data = result.data.result;
   return {
     props: {
