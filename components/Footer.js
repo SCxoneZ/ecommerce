@@ -70,13 +70,14 @@ font-size: 15px;
 
 
 export function DefaultFooter() {
+  const emotes = ["♥️", "💙", "💯","👍", "🍑"];
   return (
 
     <Footer>
       <Link href="/">
       <Title>XONESTORE</Title>
       </Link>
-      <FooterText>Made with ♥️ by Stevennius Chandra</FooterText>
+      <FooterText>Made by Stevennius Chandra💙</FooterText>
     </Footer>
 
   );
@@ -89,7 +90,7 @@ export function FixedFooter() {
       <Link href="/">
       <Title>XONESTORE</Title>
       </Link>
-      <FooterText>Made with ♥️ by Stevennius Chandra</FooterText>
+      <FooterText>Made by Stevennius Chandra♥️</FooterText>
     </Fixed>
 
   );

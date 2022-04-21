@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['avatars.githubusercontent.com', "fakestoreapi.com"],
+    domains: ["fakestoreapi.com"],
   },
   eslint: {
     // Warning: This allows production builds to successfully complete even if

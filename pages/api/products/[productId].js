@@ -21,7 +21,7 @@ export default async function handler(req, res){
       result: filteredProduct
     });
   }else{
-    return res.status(200).json({
+    return res.status(404).json({
       code: 404,
       status: "error",
       result: "Product Not Found"
